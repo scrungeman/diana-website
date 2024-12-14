@@ -197,7 +197,6 @@ body {
   50% {transform: rotate(-10deg);}
 }
 
-
 /* jump */
 .cat_wrapper {
   position: absolute;
@@ -320,4 +319,9 @@ a:hover {
 
 .cat_nose {
   fill: hsl(15, 66%, 39%);
+}
+
+.cat_sock {
+  fill: white;
+  opacity: 0.8;
 }
