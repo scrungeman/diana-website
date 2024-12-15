@@ -7,10 +7,11 @@
     <title>Diana's Website </title>
   </head>
   <body>
+    <div class="table"></div>
 
     <div class="outer_wrapper">
+      <h3 class="name hidden">happy birthday diana!!! woooo</h3>
       <div class="wrapper">
-  
         <div class="cat_wrapper">
           <div class="cat first_pose">
             <div class="cat_head">
@@ -48,6 +49,8 @@
                   <polygon class="st0" points="10.2,56 10.2,50.9 5.1,50.9 5.1,40.7 0,40.7 0,20.4 5.1,20.4 5.1,10.2 10.2,10.2 10.2,5.1 15.3,5.1 
                     15.3,0 25.5,0 25.5,10.2 20.4,10.2 20.4,15.3 15.3,15.3 15.3,20.4 10.2,20.4 10.2,40.7 15.3,40.7 15.3,45.8 20.4,45.8 20.4,50.9 
                     25.5,50.9 25.5,61.1 15.3,61.1 15.3,56 "/>
+                  <rect class="body_stripe" x="16" y="5" width="5" height="10"></rect>
+                  <rect class="body_stripe" x="8" y="10" width="5" height="10"></rect>
                 </svg>
               </div>
             </div>
@@ -84,7 +87,6 @@
       </div>
       
       <div class="ground"></div>
-  
     </div>
 
     <script src="src/cat.js"></script>
@@ -93,8 +95,32 @@
       for diana, my beloved - love peter
     </div>
 
-    <div>
-      hello
+    <div class="flex_container">
+      <div>
+        1
+      </div>
+      <div>
+        2
+      </div>
+      <div>
+        3
+      </div>
+      <div>
+        4
+      </div>
     </div>
+
+    <div class="birthday-container">
+      <button id="showMessageBtn" class="birthday-btn">click here 4 a surprise</button>
+    </div>
+    <canvas class="confetti hidden" id="canvas"></canvas>
+
+    <script src="src/confetti.js"></script>
+    <script>
+      document.getElementById('showMessageBtn').addEventListener('click', function() {
+        showBirthdayMessage();
+        this.style.display = 'none';
+      });
+    </script>
   </body>
 </html>
