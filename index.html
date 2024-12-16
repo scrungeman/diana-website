@@ -7,6 +7,11 @@
     <title>Diana's Website </title>
   </head>
   <body>
+    <div id="spotifyPlayer" class="spotify-player hidden">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/77hcIeJytsHWPNxAMusrRR?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7culhY1G5JtecL6YV2lKrF?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
     <div class="table"></div>
 
     <div class="outer_wrapper">
@@ -25,10 +30,14 @@
                 <rect class="cat_mouth_bg" x="21" y="55" width="38" height="10" /> 
                 <rect class="cat_mouth" x="38" y="45" width="5" height="15" />
                 <rect class="cat_mouth" x="30" y="55" width="20" height="5" />
-                <rect class="cat_nose" x="35" y="45" width="10" height="8" /> 
+                <rect class="cat_nose" x="35" y="45" width="10" height="8" />
+                <rect class="cat_eye" x="16" y="33" width="13" height="13" /> 
+                <rect class="cat_eye" x="50" y="33" width="13" height="13" /> 
+                <rect class="cat_iris" x="20" y="35" width="6" height="8" /> 
+                <rect class="cat_iris" x="55" y="35" width="6" height="8" /> 
 
-                <rect class="eye_stripe" x="2" y="38" width="12" height="5" />
-                <rect class="eye_stripe" x="61" y="38" width="12" height="5" /> 
+                <rect class="eye_stripe" x="2" y="38" width="12" height="3" />
+                <rect class="eye_stripe" x="64" y="38" width="12" height="3" /> 
 
                 <text class="head_stripe_m" x="32" y="32">M</text>
               </svg>
@@ -60,12 +69,16 @@
                 <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 14 30.5" >
                   <polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 "/>
                   <rect class="cat_sock" x="0" y="27" width="25" height="10"></rect>
+                  <rect class="body_stripe" x="5" y="7" width="9" height="4"></rect>
+                  <rect class="body_stripe" x="5" y="15" width="9" height="4"></rect>
                 </svg>
               </div>
               <div class="leg two">
                 <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 14 30.5" >
                   <polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 "/>
                   <rect class="cat_sock" x="0" y="27" width="25" height="10"></rect>
+                  <rect class="body_stripe" x="5" y="7" width="9" height="4"></rect>
+                  <rect class="body_stripe" x="5" y="15" width="9" height="4"></rect>
                 </svg>
               </div>  
             </div>
@@ -79,6 +92,7 @@
               <div class="leg four">
                 <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 14 30.5" >
                   <polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 "/>
+                  <rect class="cat_sock" x="0" y="27" width="25" height="10"></rect>
                 </svg>
               </div>
             </div>
@@ -97,30 +111,40 @@
 
     <div class="flex_container">
       <div>
-        1
+        <button> a message </button>
       </div>
       <div>
-        2
+        <button id="showListenBtn"> a listen </button>
       </div>
       <div>
-        3
-      </div>
-      <div>
-        4
+        <button> a video </button>
       </div>
     </div>
 
     <div class="birthday-container">
-      <button id="showMessageBtn" class="birthday-btn">click here 4 a surprise</button>
+      <button id="showBirthdayBtn" class="birthday-btn">click here 4 a surprise</button>
     </div>
     <canvas class="confetti hidden" id="canvas"></canvas>
 
     <script src="src/confetti.js"></script>
     <script>
-      document.getElementById('showMessageBtn').addEventListener('click', function() {
+      document.getElementById('showBirthdayBtn').addEventListener('click', function() {
         showBirthdayMessage();
         this.style.display = 'none';
       });
+
+      // document.getElementById('showMsgBtn').addEventListener('click', function() {
+      //   showMessage();
+      //   this.style.display = 'none';
+      // });
+
+      document.getElementById('showListenBtn').addEventListener('click', function () {
+      const spotifyPlayer = document.getElementById('spotifyPlayer');
+
+      spotifyPlayer.classList.remove('hidden');
+
+      this.style.display = 'none';
+    });
     </script>
   </body>
 </html>

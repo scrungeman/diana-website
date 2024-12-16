@@ -309,7 +309,7 @@ a:hover {
 }
 
 .eye_stripe {
-  fill: #8B4513;
+  fill: #753a11;
 }
 
 .cat_mouth_bg {
@@ -318,7 +318,15 @@ a:hover {
 }
 
 .cat_nose {
-  fill: hsl(15, 66%, 39%);
+  fill: hsl(15, 82%, 28%);
+}
+
+.cat_eye {
+  fill: hsl(72, 33%, 49%);
+}
+
+.cat_iris {
+  fill: black;
 }
 
 .cat_sock {
@@ -349,7 +357,7 @@ a:hover {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .confetti {
@@ -380,4 +388,16 @@ a:hover {
   justify-content: center;
   flex-direction: row;
   align-content: center;
+}
+
+.spotify-player {
+  position: absolute;
+  display: flex;
+  top: 150px;
+  width: 350px;
+  left: 50%;
+  justify-content: center;
+  transform: translateX(-50%);
+  z-index: 1000;
+  flex-direction: column;
 }
