@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
-    <title>Diana's Website </title>
+    <title>I LOVE DIANA </title>
   </head>
   <body>
     <div id="spotifyPlayer" class="spotify-player hidden">
@@ -116,8 +116,14 @@
       <div>
         <button id="showListenBtn"> a listen </button>
       </div>
-      <div>
-        <button> a video </button>
+      <div class="video-wrapper">
+        <button id="showVideoBtn"> a video </button>
+        <div id="videoContainer" class="hidden">
+          <video width="270" height="480" controls>
+            <source src="src/assets/dianaedit2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
 
@@ -125,6 +131,13 @@
       <button id="showBirthdayBtn" class="birthday-btn">click here 4 a surprise</button>
     </div>
     <canvas class="confetti hidden" id="canvas"></canvas>
+
+    <div id="videoPlayer" class="hidden" style="text-align:center; margin-top: 300px;">
+      <video width="400" controls>
+        <source src="src/assets/dianaedit2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
     <script src="src/confetti.js"></script>
     <script>
@@ -139,12 +152,18 @@
       // });
 
       document.getElementById('showListenBtn').addEventListener('click', function () {
-      const spotifyPlayer = document.getElementById('spotifyPlayer');
+        const spotifyPlayer = document.getElementById('spotifyPlayer');
 
-      spotifyPlayer.classList.remove('hidden');
+        spotifyPlayer.classList.remove('hidden');
 
-      this.style.display = 'none';
-    });
+        this.style.display = 'none';
+      });
+
+      document.getElementById('showVideoBtn').addEventListener('click', function() {
+        const videoContainer = document.getElementById('videoContainer');
+        videoContainer.classList.remove('hidden');
+        this.style.display = 'none';
+      });
     </script>
   </body>
 </html>
