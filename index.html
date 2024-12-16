@@ -109,7 +109,7 @@
       for diana, my beloved - love peter
     </div>
 
-    <div class="flex_container">
+    <div class="flex_container hidden" id="surpriseButtons">
       <div>
         <button> a message </button>
       </div>
@@ -132,17 +132,11 @@
     </div>
     <canvas class="confetti hidden" id="canvas"></canvas>
 
-    <div id="videoPlayer" class="hidden" style="text-align:center; margin-top: 300px;">
-      <video width="400" controls>
-        <source src="src/assets/dianaedit2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
     <script src="src/confetti.js"></script>
     <script>
       document.getElementById('showBirthdayBtn').addEventListener('click', function() {
         showBirthdayMessage();
+        document.getElementById('surpriseButtons').classList.remove('hidden');
         this.style.display = 'none';
       });
 

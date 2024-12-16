@@ -337,7 +337,7 @@ a:hover {
 .flex_container {
   position: absolute;
   display: flex;
-  top: 200px;
+  top: 100px;
   width: 100%;
   justify-content: space-evenly;
   flex-direction: row;
@@ -393,7 +393,7 @@ a:hover {
 .spotify-player {
   position: absolute;
   display: flex;
-  top: 150px;
+  top: 100px;
   width: 350px;
   left: 50%;
   justify-content: center;
