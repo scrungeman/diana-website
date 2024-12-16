@@ -412,5 +412,28 @@ a:hover {
   left: 0; 
 }
 
+#poemContainer {
+  position: absolute;
+  top: 33%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 375px;
+}
+
+.poem-background {
+  background-color: rgba(255, 250, 240, 0.9);
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.poem {
+  font-family: 'Georgia', serif;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  color: #333;
+  white-space: pre-line;
+}
 
 

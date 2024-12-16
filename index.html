@@ -111,7 +111,7 @@
 
     <div class="flex_container hidden" id="surpriseButtons">
       <div>
-        <button> a message </button>
+        <button id="showPoemBtn"> a poem </button>
       </div>
       <div>
         <button id="showListenBtn"> a listen </button>
@@ -124,6 +124,24 @@
             Your browser does not support the video tag.
           </video>
         </div>
+      </div>
+    </div>
+
+    <div id="poemContainer" class="hidden">
+      <div class="poem-background">
+        <p class="poem">
+          i don’t write love poems,<br>
+          but i’ll try, because it’s you.<br><br>
+          sometimes i notice the world feels less grey,<br>
+          as if it’s painted in a softer hue.<br><br>
+          and that only ever happens,<br>
+          when i’m with you.<br><br>
+          because you fill my soul full of everything that i’ve ever wanted to feel,<br>
+          in us, exists a love so pure and real.<br><br>
+          and so i imagine us growing old together, loving forever,<br>
+          a future that only exists with you.<br><br>
+          <strong>for diana. yours forever, peter</strong>
+        </p>
       </div>
     </div>
 
@@ -140,10 +158,10 @@
         this.style.display = 'none';
       });
 
-      // document.getElementById('showMsgBtn').addEventListener('click', function() {
-      //   showMessage();
-      //   this.style.display = 'none';
-      // });
+      document.getElementById('showPoemBtn').addEventListener('click', function () {
+        document.getElementById('poemContainer').classList.remove('hidden');
+        this.style.display = 'none'; 
+      });
 
       document.getElementById('showListenBtn').addEventListener('click', function () {
         const spotifyPlayer = document.getElementById('spotifyPlayer');
