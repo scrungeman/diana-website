@@ -436,4 +436,10 @@ a:hover {
   white-space: pre-line;
 }
 
+.rope {
+  fill: none !important;
+}
 
+.raphael-canvas {
+  pointer-events: none;
+}
