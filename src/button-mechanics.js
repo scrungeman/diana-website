@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function(){
       musicDiv.id = 'musicControls';
       musicDiv.className = 'music-controls';
       musicDiv.style.position = 'absolute';
-      musicDiv.style.top = '10px';
-      musicDiv.style.right = '10px';
+      musicDiv.style.top = '-5px';
+      musicDiv.style.right = '-5px';
       musicDiv.innerHTML = `
         <button id="musicToggle" class="music-btn">🎵 Play Music</button>
         <audio id="bgMusic" loop>
