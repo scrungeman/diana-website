@@ -59,63 +59,48 @@ function initConfetti() {
   }
 };
 
-function render() {
+function renderConfetti() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
   confetti.forEach((confetto, index) => {
     let width = confetto.dimensions.x * confetto.scale.x;
     let height = confetto.dimensions.y * confetto.scale.y;
 
-    // Move canvas to position and rotate
+    // Move to position and rotate
     ctx.translate(confetto.position.x, confetto.position.y);
     ctx.rotate(confetto.rotation);
 
-    // Apply forces to velocity
+    // Apply forces
     confetto.velocity.x -= confetto.velocity.x * drag;
     confetto.velocity.y = Math.min(confetto.velocity.y + gravity, terminalVelocity);
     confetto.velocity.x += Math.random() > 0.5 ? Math.random() : -Math.random();
 
-    // Set position
     confetto.position.x += confetto.velocity.x;
     confetto.position.y += confetto.velocity.y;
 
-    // Delete confetti when out of frame
+    // Remove confetto if out of frame
     if (confetto.position.y >= canvas.height) confetti.splice(index, 1);
-
-    // Loop confetto x position
     if (confetto.position.x > canvas.width) confetto.position.x = 0;
     if (confetto.position.x < 0) confetto.position.x = canvas.width;
 
-    // Spin confetto by scaling y
+    // Spin the confetto
     confetto.scale.y = Math.cos(confetto.position.y * 0.1);
     ctx.fillStyle = confetto.scale.y > 0 ? confetto.color.front : confetto.color.back;
 
-    // Draw confetti
+    // Draw the confetto
     ctx.fillRect(-width / 2, -height / 2, width, height);
-
-    // Reset transform matrix
     ctx.setTransform(1, 0, 0, 1, 0, 0);
   });
+  window.requestAnimationFrame(renderConfetti);
+}
 
-  window.requestAnimationFrame(render);
-};
-
-//---------Overlay and display-----------
-window.addEventListener('resize', resizeCanvas);
-
-// This function will show the birthday message and start the confetti animation
 function showBirthdayMessage() {
   const nameElem = document.querySelector('.name');
   const canvasElem = document.querySelector('#canvas');
   
-  // Remove hidden class to display elements
   nameElem.classList.remove('hidden');
   canvasElem.classList.remove('hidden');
 
-  // Initialize and render confetti
   initConfetti();
-  render();
+  renderConfetti();
 }
-
-// Export the function so we can call it from the main page if needed
 window.showBirthdayMessage = showBirthdayMessage;

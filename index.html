@@ -4,11 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
-    <title>I LOVE DIANA </title>
+    <title>I LOVE DIANA</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
-    <!-- jQuery Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
   </head>
   <body>
     <div id="card"> </div>
@@ -40,19 +38,15 @@
                 <rect class="cat_eye" x="50" y="33" width="13" height="13" /> 
                 <rect class="cat_iris" x="20" y="35" width="6" height="8" /> 
                 <rect class="cat_iris" x="55" y="35" width="6" height="8" /> 
-
                 <rect class="eye_stripe" x="2" y="38" width="12" height="3" />
-                <rect class="eye_stripe" x="64" y="38" width="12" height="3" /> 
-
+                <rect class="eye_stripe" x="64" y="38" width="12" height="3" />
                 <text class="head_stripe_m" x="32" y="32">M</text>
               </svg>
             </div>
             
-            
             <div class="body">
               <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 91.7 40.8">
                 <path class="st0" d="M91.7,40.8H0V10.2h5.1V5.1h5.1V0h66.2v5.1h10.2v5.1h5.1L91.7,40.8z"/>
-                
                 <rect class="body_stripe" x="20" y="5" width="5" height="25"></rect>
                 <rect class="body_stripe" x="30" y="5" width="5" height="25"></rect>
                 <rect class="body_stripe" x="40" y="5" width="5" height="25"></rect>
@@ -153,17 +147,30 @@
     <div class="birthday-container">
       <button id="showBirthdayBtn" class="birthday-btn">click here 4 a surprise</button>
     </div>
+
+    <div id="choiceContainer" class="hidden" style="text-align: center; margin-top: 20px;">
+      <button id="birthdayChoiceBtn">birthday</button>
+      <br>
+      <button id="valentineChoiceBtn" style="margin-top: 10px;">valentines</button>
+    </div>
+
+    <div id="valentineModal" class="hidden" 
+         style="position: fixed; top: 30%; left: 50%; transform: translate(-50%, -50%);
+                background: #fff; padding: 20px; border-radius: 10px; z-index: 2000; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+      <div id="valentineBox" style="text-align: center;">
+        <p style="margin-bottom: 20px;">diana... will you be my valentine? <3</p>
+        <button id="valentineYesBtn" style="margin-right: 10px;">Yes</button>
+        <button id="valentineNoBtn">No</button>
+      </div>
+    </div>
+
     <canvas class="confetti hidden" id="canvas"></canvas>
 
     <script src="src/confetti.js"></script>
     <script src="src/string.js"></script>
-    <script>
-      document.getElementById('showBirthdayBtn').addEventListener('click', function() {
-        showBirthdayMessage();
-        document.getElementById('surpriseButtons').classList.remove('hidden');
-        this.style.display = 'none';
-      });
+    <script src="src/button-mechanics.js"></script>
 
+    <script>
       document.getElementById('showPoemBtn').addEventListener('click', function () {
         document.getElementById('poemContainer').classList.remove('hidden');
         this.style.display = 'none'; 
@@ -171,9 +178,7 @@
 
       document.getElementById('showListenBtn').addEventListener('click', function () {
         const spotifyPlayer = document.getElementById('spotifyPlayer');
-
         spotifyPlayer.classList.remove('hidden');
-
         this.style.display = 'none';
       });
 

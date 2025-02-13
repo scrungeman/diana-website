@@ -369,6 +369,7 @@ a:hover {
   margin: 0 auto;
   user-select: none;
   pointer-events: none;
+  z-index: 10000
 }
 
 .name {
@@ -442,4 +443,11 @@ a:hover {
 
 .raphael-canvas {
   pointer-events: none;
+}
+
+.birthday-container,
+#choiceContainer,
+#valentineModal {
+  position: relative;
+  z-index: 10000; 
 }
